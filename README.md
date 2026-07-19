@@ -49,28 +49,31 @@ El proyecto sigue una arquitectura modular en Next.js (App Router):
 ```
 
 ## 🚀 Instalación y Despliegue
--Sigue estos pasos para levantar el entorno de desarrollo local:
 
-#Clonar el repositorio
+Sigue estos pasos para levantar el entorno de desarrollo local:
 
-Bash
-git clone [https://github.com/tu-usuario/galiang-landing.git](https://github.com/tu-usuario/galiang-landing.git)
-cd galiang-landing
-Instalar dependencias
+1. **Clonar el repositorio**
+   ```bash
+   git clone [https://github.com/JARD1/INVERSIONES-GALIANG.git](https://github.com/JARD1/INVERSIONES-GALIANG.git)
+   cd INVERSIONES-GALIANG
+   ```
+2.  **Instalar dependencias**
+   ```bash
+   npm install
+   ```
 
-Bash
-npm install
-Ejecutar el servidor de desarrollo
-
-Bash
-npm run dev
+3. **Ejecutar el servidor de desarrollo**
+   ```bash
+   npm run dev
+   ```
 Abre http://localhost:3000 en tu navegador para ver el resultado.
 
-Construcción para Producción (Build)
+4. **Construcción para Producción (Build)**
 
-Bash
-npm run build
-npm run start
+  ´´´bash
+  npm run build
+  npm run start
+  ´´´
 
 ## 🎨 Decisiones de Diseño (UX/UI)
 Paleta de Colores: Basada en tonos oscuros (#050811, #0a0f1c) para reducir la fatiga visual, acentuada con Cian (#22d3ee) y Esmeralda (#10b981) para imitar luces de estado de servidores y terminales.
