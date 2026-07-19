@@ -24,3 +24,24 @@ body {
   color: var(--foreground);
   font-family: Arial, Helvetica, sans-serif;
 }
+
+/* --- ANIMACIONES DE GALIANG (Flujo de datos y LEDs) --- */
+@layer utilities {
+  @keyframes dataFlow { to { stroke-dashoffset: -40; } }
+  @keyframes dataFlowRev { to { stroke-dashoffset: 40; } }
+  @keyframes blink { 0%, 100% { opacity: 1; } 50% { opacity: 0.3; } }
+  @keyframes blinkFast { 0%, 100% { opacity: 1; } 50% { opacity: 0; } }
+  
+  .animate-flow { animation: dataFlow 1.5s linear infinite; }
+  .animate-flow-fast { animation: dataFlow 0.8s linear infinite; }
+  .animate-flow-rev { animation: dataFlowRev 2s linear infinite; }
+  
+  .led-blink { animation: blink 2s ease-in-out infinite; }
+  .led-fast { animation: blinkFast 0.3s steps(2, start) infinite; }
+  .led-random { animation: blinkFast 0.7s steps(2, start) infinite alternate; }
+}
+
+/* app/globals.css o donde tengas tu CSS global */
+html {
+  scroll-behavior: smooth;
+}
