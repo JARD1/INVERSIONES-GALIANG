@@ -70,10 +70,10 @@ Abre http://localhost:3000 en tu navegador para ver el resultado.
 
 4. **Construcción para Producción (Build)**
 
-  ´´´bash
+  ```bash
   npm run build
   npm run start
-  ´´´
+  ```
 
 ## 🎨 Decisiones de Diseño (UX/UI)
 Paleta de Colores: Basada en tonos oscuros (#050811, #0a0f1c) para reducir la fatiga visual, acentuada con Cian (#22d3ee) y Esmeralda (#10b981) para imitar luces de estado de servidores y terminales.
