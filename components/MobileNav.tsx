@@ -1,6 +1,13 @@
 'use client';
-import { useState, useEffect, useRef } from 'react';
+import { useState, useEffect } from 'react';
+import { motion, Variants } from 'framer-motion';
 import { Building2, Users, BriefcaseBusiness, Mail, Zap } from 'lucide-react';
+
+// Tipado necesario para Vercel
+const itemVariants: Variants = {
+  hidden: { opacity: 0, y: 10 },
+  visible: { opacity: 1, y: 0 }
+};
 
 // 1. Definimos las secciones de forma dinámica para facilitar la lógica de resaltado
 const navItems = [
@@ -71,7 +78,12 @@ export const MobileNav = () => {
 
               {/* 4. EL HIGHLIGHT VISUAL: Un punto neón debajo del item activo */}
               {isActive && (
-                <div className="absolute bottom-1 w-1.5 h-1.5 bg-cyan-400 rounded-full shadow-[0_0_10px_rgba(34,211,238,0.8)]" />
+                <motion.div 
+                  initial="hidden"
+                  animate="visible"
+                  variants={itemVariants}
+                  className="absolute bottom-1 w-1.5 h-1.5 bg-cyan-400 rounded-full shadow-[0_0_10px_rgba(34,211,238,0.8)]" 
+                />
               )}
             </a>
           );

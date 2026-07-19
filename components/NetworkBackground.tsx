@@ -30,8 +30,10 @@ export const NetworkBackground = () => {
 
     class Particle {
       x: number; y: number; vx: number; vy: number; radius: number;
+      canvas: HTMLCanvasElement; // Referencia interna
       
-      constructor() {
+      constructor(canvas: HTMLCanvasElement) {
+        this.canvas = canvas; // Asignamos el canvas
         this.x = Math.random() * canvas.width;
         this.y = Math.random() * canvas.height;
         this.vx = (Math.random() - 0.5) * 0.5;
@@ -43,8 +45,8 @@ export const NetworkBackground = () => {
         this.x += this.vx;
         this.y += this.vy;
 
-        if (this.x < 0 || this.x > canvas.width) this.vx = -this.vx;
-        if (this.y < 0 || this.y > canvas.height) this.vy = -this.vy;
+        if (this.x < 0 || this.x > this.canvas.width) this.vx = -this.vx;
+        if (this.y < 0 || this.y > this.canvas.height) this.vy = -this.vy;
 
         const dx = mouse.x - this.x;
         const dy = mouse.y - this.y;
@@ -65,7 +67,8 @@ export const NetworkBackground = () => {
     }
 
     const particleCount = Math.min(window.innerWidth / 15, 100);
-    for (let i = 0; i < particleCount; i++) particles.push(new Particle());
+    // Pasamos el canvas al constructor
+    for (let i = 0; i < particleCount; i++) particles.push(new Particle(canvas));
 
     const animate = () => {
       ctx.clearRect(0, 0, canvas.width, canvas.height);

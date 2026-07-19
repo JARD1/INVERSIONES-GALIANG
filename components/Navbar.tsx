@@ -1,7 +1,12 @@
 'use client';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { useState, useEffect } from 'react';
 import { Terminal } from 'lucide-react';
+
+const navVariants: Variants = {
+  hidden: { opacity: 0, x: -20 },
+  visible: { opacity: 1, x: 0 }
+};
 
 export const Navbar = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -27,7 +32,12 @@ export const Navbar = () => {
         <div className="flex justify-center md:justify-between items-center">
 
           {/* Added justify-center for mobile brand centering */}
-          <motion.div initial={{ opacity: 0, x: -20 }} animate={{ opacity: 1, x: 0 }} className="flex items-center justify-center md:justify-start gap-3 md:gap-4">
+          <motion.div 
+            initial="hidden" 
+            animate="visible" 
+            variants={navVariants} 
+            className="flex items-center justify-center md:justify-start gap-3 md:gap-4"
+          >
 
             {/* --- LOGO SUPERPUESTO (Fondo Transparente) --- */}
             {/* Preserved User's exact values: w-12/md:w-20 */}
