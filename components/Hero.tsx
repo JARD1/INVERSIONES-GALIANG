@@ -1,9 +1,16 @@
 'use client';
-import { motion } from 'framer-motion';
+import { motion, Variants } from 'framer-motion';
 import { ChevronRight } from 'lucide-react';
 
-const fadeInUp = { hidden: { opacity: 0, y: 40 }, visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } } };
-const staggerContainer = { hidden: { opacity: 0 }, visible: { opacity: 1, transition: { staggerChildren: 0.2 } } };
+const fadeInUp: Variants = { 
+  hidden: { opacity: 0, y: 40 }, 
+  visible: { opacity: 1, y: 0, transition: { duration: 0.6, ease: 'easeOut' } } 
+};
+
+const staggerContainer: Variants = { 
+  hidden: { opacity: 0 }, 
+  visible: { opacity: 1, transition: { staggerChildren: 0.2 } } 
+};
 
 // Curva Bézier del Infinito (Figura 8 perfecta)
 const INFINITY_PATH = "M 400,250 C 520,70 730,70 730,250 C 730,430 520,430 400,250 C 280,70 70,70 70,250 C 70,430 280,430 400,250 Z";
